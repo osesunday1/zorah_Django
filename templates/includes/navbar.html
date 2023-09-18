@@ -1,0 +1,43 @@
+
+<header>
+    <div class="nav-bar">
+      <a href="{% url 'home' %}" class="logo">ZORAH</a>
+
+      <!--------------------search bar-------------------------->
+      <div class="wrap">
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="What are you looking for?">
+           <button type="submit" class="searchButton">
+            <a href="#"><i class="uil uil-search"></i></a>
+          </button>
+        </div>
+     </div>
+     <!--------------------search bar-------------------------->
+
+          <!--------------------cart-------------------------->
+
+          <div class="cart">
+            <a href="#">
+             <i class="uil uil-shopping-cart"></i>
+             <span class="cart-basket">
+               0
+             </span>
+             </a>
+            </div>
+       
+            <!--------------------cart-------------------------->
+
+     
+      <div class="navigation">
+        <div class="nav-items">
+          <i class="uil uil-times nav-close-btn"></i>
+          <a href="{% url 'home' %}"><i class="uil uil-home"></i> Home</a>
+          <a href="{% url 'store' %}"><i class="uil uil-compass"></i> Store</a>
+          <a href="#"><i class="uil uil-info-circle"></i> About</a>
+          <a href="#"><i class="uil uil-document-layout-left"></i> Blog</a>
+          <a href="#"><i class="uil uil-envelope"></i> Contact</a>
+        </div>
+      </div>
+      <i class="uil uil-apps nav-menu-btn"></i>
+    </div>
+  </header>

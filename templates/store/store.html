@@ -1,0 +1,165 @@
+
+{% extends 'base.html' %}
+
+{% load static %}  
+
+
+{%block content%}
+
+
+
+
+<br><br><br><br>
+
+
+
+
+    <!-------------------------------------product heading section----------------------------------->
+  <section class="product-section0 section">
+    <h1>Store</h1> : 0 product(s) searched
+
+  </section>
+
+  
+
+  <!------------------------------------------------------First section------------------------------------------------------------->
+
+    <section class="product-section1 section">
+
+    <div class="left-column">
+
+
+      <!------------------------------left Arcodion-------------------------------->
+
+      <div class="containerFluid">
+        
+        <div class="accordion">
+          <div class="icon"></div>
+          <h5>Categories</h5>
+        </div>
+        <div class="panel">
+          <ul>
+            {% for category in links %}
+            <li><a href="{{ category.get_url }}">{{category.category_name}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      
+        <div class="accordion">
+          <div class="icon"></div>
+          <h5>Packages</h5>
+        </div>
+        <div class="panel">
+          <ul>
+            {% for package in links1 %}
+            <li><a href="{{ package.get_url }}">{{package.package_name}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="accordion">
+          <div class="icon"></div>
+          <h5>Services</h5>
+        </div>
+        <div class="panel">
+          <ul>
+            {% for surprise in links2 %}
+            <li><a href="{{ surprise.get_url }}">{{surprise.surprise_name}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      
+      
+        
+      </div>
+        
+
+
+
+    
+
+        <!------------------------------ Arcodion-------------------------------->
+      </div>
+
+
+
+      
+    <div class="right-column">
+      <div class="top-info">
+      <p><strong>{{product_count}}</strong> items found</p>
+      <hr>
+    </div>
+
+      {% for product in products %}
+
+      <div class="product-card">
+          
+        <div class="badge">Hot</div>
+        <a href="{% url 'productdetail' product.id %}">
+          <div class="product-tumb">
+          <img src="{{ product.images.url }}" alt="">
+        </div>
+      </a>
+        <div class="product-details">
+          <span class="product-catagory">{{ product.category }}</span>
+          <h4><a href="{% url 'productdetail' product.id %}">{{ product.product_name }}</a></h4>
+          <p>{{ product.description }}</p>
+          <div class="product-bottom-details">
+            <div class="product-price">N {{ product.price }}</div>
+            <div class="product-links">
+              <a href=""><i class="uil uil-thumbs-up"></i></a>
+              <a href=""><i class="uil uil-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      {% endfor %}
+
+
+
+
+
+
+
+    </div>
+    </section>
+
+    <section class="product-section2 section">
+      <ul class="pagination">
+        <li class="icon">
+          <a href="#"><span class="fas fa-angle-left"></span>Previous</a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li class="icon">
+          <a href="#">Next<span class="fas fa-angle-right"></span></a>
+        </li>
+      </ul>
+
+
+  
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
