@@ -9,9 +9,6 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('packages', '0001_initial'),
-        ('category', '0001_initial'),
-        ('surprises', '0001_initial'),
     ]
 
     operations = [
@@ -29,8 +26,6 @@ class Migration(migrations.Migration):
                 ('created_date', models.DateTimeField(auto_now_add=True)),
                 ('modified_date', models.DateTimeField(auto_now=True)),
                 ('category', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='category.category')),
-                ('packages', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='packages.packages')),
-                ('surprises', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='surprises.surprises')),
             ],
         ),
     ]

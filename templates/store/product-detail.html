@@ -20,21 +20,14 @@
 
   <div class="pic-and-detail">
     <div class="pic">
-      <img src="{{ product.images.url }}" class="desc-pic" alt="">
+      <img src="{{ single_product.images.url}}" class="desc-pic" alt="">
     </div>
 
     <div class="details">
-        {% if product.category %}
-      <h4>{{ product.category.category_name }}</h1>
-        {% elif product.surprises %}
-        <h4>{{ product.surprises.surprise_name }}</h1>
-        {% elif product.packages %}
-            <h4>{{ product.packages.package_name }}</h1>
-        {% else %}
-                <h4>product has no category</h4>
-        {% endif %}
+       
+      <h4>{{ single_product.category.category_name }}</h1>
         <div class="ratings"></h4>
-      <h1>{{ product.product_name }}</h1>
+      <h1>{{ single_product.product_name }}</h1>
       <div class="ratings">
         <input type="radio" id="star5" name="rate" value="5" />
     <label for="star5" title="text">5 stars</label>
@@ -74,11 +67,17 @@
     <span class="divider"></span>
 
     <div class="product-btn-group">
-      {% if product.stock <= 0 %}
+      {% if single_product.stock <= 0 %}
       <h1> out of stock</h1>
       {% else %}
+      {% if in_cart %}
+        <a href="#" class="btn  btn-success"> <span class="text">Added to Cart</span> <i class="fas fa-check"></i>  </a>
+        <a href="{% url 'cart' %}" class="btn  btn-outline-primary"> <span class="text">View Cart</span> <i class="fas fa-eye"></i>  </a>
+
+        {% else %}
       <div class="button buy-now"><i class='bx bxs-zap' ></i> Buy Now</div>
-      <div class="button add-cart"><i class='bx bxs-cart' ></i> Add to Cart</div>
+     <a href="{% url 'add_cart' single_product.id %}"> <div class="button add-cart"><i class='bx bxs-cart' ></i> Add to Cart</div></a>
+     {% endif %}
       {% endif %}
 
   

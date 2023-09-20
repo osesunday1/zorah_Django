@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% load static %}  
+
+
+{%block content%}
+<br><br><br><br>
+
+<!-------------------------------------product heading section----------------------------------->
+
+{% if not cart_items %}
+<section class="product-section0 section">
+  <h1>Cart is empty</h1> 
+  
+  <div class="button buy-now"> <a href="{% url 'store' %}"><i class='bx bxs-zap' ></i> <h2>Continue Shopping</h2>  </a></div>
+
+
+</section>
+
+{% else %}
+
+<section class="product-section0 section">
+    <h1>Cart</h1> 
+
+  </section><br><br> <br>
+
+
+
+
+    <section class="cart-table1-section1">
+
+        <div class="cart-and-summary">
+
+
+        <div class="cart-details">
+            <table>
+
+              {% for cart_item in cart_items %}
+                <tr>
+                  <th>Product</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td><img src="{{ cart_item.product.images.url }}" alt=""></td>
+                  <td><a href="{{ cart_item.product.get_url }}">{{ cart_item.product.product_name }}</a></td>
+                  <td>
+                            <div class="num-block skin-2">
+                            <div class="num-in">
+                              <a href="{% url 'remove_cart' cart_item.product.id %}"><span class="minus dis"></span></a>
+                              <input type="text" class="in-num" value="{{ cart_item.quantity}}" readonly="">
+                              <a href="{% url 'add_cart' cart_item.product.id %}"><span class="plus"></span></a>
+                            </div>
+                          </div>
+                    </td>
+                  <td>{{ cart_item.total}}</td>
+                  <th> <a href="{% url 'remove_cart_item' cart_item.product.id %}"><i class="uil uil-trash-alt"></i> </a> </th>
+                </tr>
+
+                {% endfor %}
+                
+              </table>
+
+        </div>
+        <div class="summary-details-total">
+        <div class="summary-details">
+            <div class="summary">
+                <div class="total-price">
+                    <h4>Sub-Total Price</h4>
+                    <h3>#{{total}}</h3>
+                </div>
+                <div class="total-price">
+                    <h4>Delivery fee</h4>
+                    <h3>#4000</h3>
+                </div>
+                <div class="total-price">
+                  <h4>Total Price</h4>
+                  <h3>#4000</h3>
+              </div>
+            </div>
+            
+            <div class="buttom">
+            <span class="divider"></span>
+            <div class="button buy-now"><i class='bx bxs-zap' ></i> Buy Now</div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+
+
+    </section>
+    {% endif %}
+
+
+
+
+
+
+
+{% endblock %}
+

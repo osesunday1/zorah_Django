@@ -1,7 +1,5 @@
 from django.db import models
 from category.models import Category
-from packages.models import Packages
-from surprises.models import Surprises
 from django.urls import reverse
 from accounts.models import Account
 from django.db.models import Avg, Count
@@ -17,12 +15,12 @@ class Product(models.Model):
     stock           = models.IntegerField()
     is_available    = models.BooleanField(default=True)
     category        = models.ForeignKey(Category, on_delete=models.CASCADE, default=None, null=True,  blank= True)
-    packages        = models.ForeignKey(Packages, on_delete=models.CASCADE, default=None, null=True, blank= True)
-    surprises       = models.ForeignKey(Surprises, on_delete=models.CASCADE, default=None, null=True,  blank= True)    
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
 
-    
 
+    def get_url(self):
+         return reverse('product_detail', args=[self.category.slug, self.slug])
+    
     def __str__(self):
         return self.product_name

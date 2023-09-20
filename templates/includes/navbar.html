@@ -17,10 +17,10 @@
           <!--------------------cart-------------------------->
 
           <div class="cart">
-            <a href="#">
+            <a href="{% url 'cart' %}">
              <i class="uil uil-shopping-cart"></i>
              <span class="cart-basket">
-               0
+              {{ cart_count }}
              </span>
              </a>
             </div>

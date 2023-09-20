@@ -44,33 +44,6 @@
             {% endfor %}
           </ul>
         </div>
-      
-        <div class="accordion">
-          <div class="icon"></div>
-          <h5>Packages</h5>
-        </div>
-        <div class="panel">
-          <ul>
-            {% for package in links1 %}
-            <li><a href="{{ package.get_url }}">{{package.package_name}}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div class="accordion">
-          <div class="icon"></div>
-          <h5>Services</h5>
-        </div>
-        <div class="panel">
-          <ul>
-            {% for surprise in links2 %}
-            <li><a href="{{ surprise.get_url }}">{{surprise.surprise_name}}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      
-      
-        
       </div>
         
 
@@ -95,20 +68,20 @@
       <div class="product-card">
           
         <div class="badge">Hot</div>
-        <a href="{% url 'productdetail' product.id %}">
+        <a href="{{ product.get_url }}">
           <div class="product-tumb">
           <img src="{{ product.images.url }}" alt="">
         </div>
       </a>
         <div class="product-details">
           <span class="product-catagory">{{ product.category }}</span>
-          <h4><a href="{% url 'productdetail' product.id %}">{{ product.product_name }}</a></h4>
+          <h4><a href="{{ product.get_url }}">{{ product.product_name }}</a></h4>
           <p>{{ product.description }}</p>
           <div class="product-bottom-details">
             <div class="product-price">N {{ product.price }}</div>
             <div class="product-links">
               <a href=""><i class="uil uil-thumbs-up"></i></a>
-              <a href=""><i class="uil uil-shopping-cart"></i></a>
+              <a href="{% url 'add_cart' product.id %}"><i class="uil uil-shopping-cart"></i></a>
             </div>
           </div>
         </div>
