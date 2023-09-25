@@ -1,8 +1,6 @@
 from django.db import models
 from category.models import Category
 from django.urls import reverse
-from accounts.models import Account
-from django.db.models import Avg, Count
 
 # Create your models here.
 
