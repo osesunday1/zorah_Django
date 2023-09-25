@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}  
+
+
+{%block content%}
+
+
+<div class="container-registration">
+    <div class="title">Registration</div>
+    <div class="content">
+
+
+      <form action="{% url 'register' %}"  method="POST">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            {{ form.first_name }}
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            {{ form.last_name }}
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            {{ form.email }}
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            {{ form.phone_number }}
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            {{ form.password }}
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            {{ form.confirm_password }}
+          </div>
+
+          {% if form.errors %}
+        <span style="color: red;">{{ form.errors.0 }}</span>
+        <br>
+    {% endif %}
+
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        {{ form.email_errors }}
+        {{ form.non_field_errors }}
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}

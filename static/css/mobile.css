@@ -297,5 +297,43 @@ td {
 /* / =================spinner================== */
 
 
+/*===================================== registration ==========================================*/
+
+.container-registration{
+  max-width: 80%;
+  margin-top: 25%;
+  margin-bottom: 10%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+form .category{
+    width: 100%;
+  }
+.container-registration .content .container-registration .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+.user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  .container-registration .content form .user-details{
+    display: block;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+
+  .container-registration .content form .user-details .input-box{
+    width: 100%;
+  }
+
 
   }
+
+
+
+
+/*===================================== registration ==========================================*/
+

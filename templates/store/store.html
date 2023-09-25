@@ -15,9 +15,14 @@
 
 
     <!-------------------------------------product heading section----------------------------------->
-  <section class="product-section0 section">
-    <h1>Store</h1> : 0 product(s) searched
+    <section class="product-section0 section">
 
+    {% if 'search' in request.path %}
+		<h2 class="title-page">Search Result</h2>
+	{% else %}
+
+    <h1>Store</h1> : 0 product(s) searched
+{% endif %}
   </section>
 
   
@@ -100,17 +105,29 @@
     </section>
 
     <section class="product-section2 section">
+      {% if products.has_other_pages %}
       <ul class="pagination">
-        <li class="icon">
-          <a href="#"><span class="fas fa-angle-left"></span>Previous</a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li class="icon">
-          <a href="#">Next<span class="fas fa-angle-right"></span></a>
-        </li>
+        {% if products.has_previous %}
+        <li class="icon"><a href="?page={{products.previous_page_number}}"><span class="fas fa-angle-left"></span>Previous</a></li>
+          {% else %}
+          <li class="icon disabled"><a href="#"><span class="fas fa-angle-left"></span>Previous</a></li>
+          {% endif %}
+
+          {% for i in products.paginator.page_range %}
+				{% if products.number == i %}
+        <li><a href="#">{{i}}</a></li>
+        {% else %}
+        <li><a href="?page={{i}}">{{i}}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if products.has_next %}
+        <li class="icon"> <a href="?page={{products.next_page_number}}">Next<span class="fas fa-angle-right"></span></a> </li>
+        {% else %}
+        <li class="icon"> <a href="#">Next<span class="fas fa-angle-right"></span></a> </li>
+        {% endif %}
       </ul>
+      {% endif %}
 
 
   

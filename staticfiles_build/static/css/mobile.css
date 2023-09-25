@@ -1,0 +1,339 @@
+
+/*======= Media queries (max-width: 1100px) =======*/
+@media screen and (max-width: 1100px){
+    header .nav-bar{
+      padding: 0 50px;
+    }
+  
+    .section{
+      padding: 25px 50px;
+    }
+  
+    .media-icons{
+      right: 0;
+      margin-right: 50px;
+    }
+  
+    .swiper-slide .text-content{
+      margin: 0 120px 0 50px;
+    }
+  
+    .bg-slider-thumbs{
+      bottom: 3em;
+    }
+  }
+  
+  /*======= Media queries (max-width: 785px) =======*/
+  @media screen and (max-width: 785px){
+    header .nav-bar{
+      padding: 25px 20px;
+    }
+
+    .nav-bar.wrap{
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-bar .wrap .search {
+      width: 100%;
+      position:relative;
+      display: flex;
+    }
+  
+    .section{
+      padding: 25px 20px;
+    }
+  
+    .media-icons{
+      margin-right: 20px;
+    }
+  
+    .media-icons a{
+      font-size: 1.5em;
+    }
+  
+    .swiper-slide .text-content{
+      margin: 0 70px 0 20px;
+    }
+  
+    .swiper-slide .text-content .title{
+      font-size: 3em;
+    }
+  
+    .swiper-slide .text-content .title span{
+      font-size: 0.35em;
+    }
+  
+    .swiper-slide .text-content p{
+      font-size: 0.9em;
+    }
+  
+    /*======= Navigation menu =======*/
+    .nav-menu-btn{
+      display: block;
+      color: var(--dark-color);
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  
+    .nav-close-btn{
+      display: block;
+      color: var(--dark-color);
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.3em;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+  
+    .navigation{
+      z-index: 99999;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+  
+    .navigation.active{
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .navigation .nav-items{
+      position: relative;
+      background: var(--white-color);
+      width: 400px;
+      max-width: 400px;
+      display: grid;
+      place-content: center;
+      margin: 20px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: var(--box-shadow);
+      transform: translateY(-200px);
+      transition: 0.3s ease;
+    }
+  
+    .navigation.active .nav-items{
+      transform: translateY(0);
+    }
+  
+    .navigation .nav-items a{
+      color: var(--dark-color);
+      font-size: 1em;
+      margin: 15px 50px;
+      transition: 0.3s ease;
+    }
+  
+    .navigation .nav-items a:hover{
+      color: var(--navigation-item-hover-color);
+    }
+  
+    .navigation .nav-items > a > i{
+      display: inline-block;
+      font-size: 1.3em;
+      margin-right: 5px;
+    }
+  
+    .swiper-slide .text-content .read-btn{
+      font-size: 0.9em;
+      padding: 5px 15px;
+    }
+
+/*======= home section1 =======*/
+    .home-section1 {
+      display: grid;
+      margin: 0 auto;
+      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+      padding: auto;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .home-section1 .pic-column{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home-section1 .pic-column img{
+      max-width: 100%; /* Ensure the image fits within the column width */
+      height: auto; /* Maintain aspect ratio */
+      display: block;
+      margin: 0 auto;
+    }
+  
+    /*======= About section =======*/
+    .home-section1 h2{
+      font-size: 2.5em;
+    }
+  
+    .home-section1 p{
+      font-size: 0.9em;
+    }
+
+
+    /* ===================home section2======================  */
+
+    .home-section2 {
+      display: grid;
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: 24px;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2em;
+    }
+
+
+
+    /*================== product first  section =======================*/
+
+.product-section1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 1500px;
+  margin: auto;
+  justify-content: center;
+}
+
+.product-section1 .right-column{
+  display: grid;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+}
+
+
+.all-product1{
+  display: grid;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+}
+
+/*============================================================= Product Detail Page ========================================================*/
+
+.product-detail-section1 .pic-and-detail{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 100%;
+  gap: 2em;
+  justify-content: center; 
+  padding: 30px;
+
+}
+
+ /*============================================================= Cart Page ========================================================*/
+
+/*================== cart detail =======================*/
+
+.cart-table1-section1{
+  width: 90%;
+  margin: auto;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cart-table1-section1 .cart-and-summary{
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+}
+
+.cart-table1-section1 .cart-and-summary .cart-details{
+  padding: 00px;
+  border-radius: 10px;
+  border: 1px solid var(--grey-color);
+}
+
+
+.cart-table1-section1 .cart-and-summary .cart-details table {
+  border-collapse:collapse;
+  width: 100%;
+  border-spacing: 0px;
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* / =================spinner================== */
+.skin-2 .num-in {
+	background: hsl(0, 0%, 100%);
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 25px;
+	height: 40px;
+	width: 70px;
+  float: left;
+}
+
+/* / =================spinner================== */
+
+
+/*===================================== registration ==========================================*/
+
+.container-registration{
+  max-width: 80%;
+  margin-top: 25%;
+  margin-bottom: 10%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+form .category{
+    width: 100%;
+  }
+.container-registration .content .container-registration .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+.user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  .container-registration .content form .user-details{
+    display: block;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+
+  .container-registration .content form .user-details .input-box{
+    width: 100%;
+  }
+
+
+  }
+
+
+
+
+/*===================================== registration ==========================================*/
+

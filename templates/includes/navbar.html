@@ -4,14 +4,16 @@
       <a href="{% url 'home' %}" class="logo">ZORAH</a>
 
       <!--------------------search bar-------------------------->
+      <form action="{% url 'search' %}" class="search" method="GET">
       <div class="wrap">
         <div class="search">
-           <input type="text" class="searchTerm" placeholder="What are you looking for?">
+           <input type="text" class="form-control" placeholder="What are you looking for?" name="keyword">
            <button type="submit" class="searchButton">
             <a href="#"><i class="uil uil-search"></i></a>
           </button>
         </div>
      </div>
+    </form>
      <!--------------------search bar-------------------------->
 
           <!--------------------cart-------------------------->
